@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Paloma</title>
+  <style>
+    html, body { margin:0; height:100%; overflow:hidden; }
+    body {
+      background: #001f4d;
+      color: white;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-family: 'Arial', sans-serif;
+    }
+    h1 {
+      font-size: 4em;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { transform: scale(1); color:#00aaff; }
+      50% { transform: scale(1.1); color:#66ccff; }
+    }
+    .heart {
+      position:absolute;
+      font-size:1.5em;
+      color:#00ccff;
+      animation: float 6s infinite;
+      opacity:0.8;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); opacity:1; }
+      100% { transform: translateY(-500px) scale(0.5); opacity:0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Paloma</h1>
+  <script>
+    for(let i=0;i<20;i++){
+      const h = document.createElement('div');
+      h.className = 'heart';
+      h.innerText = '❤️';
+      h.style.left = Math.random()*100+'%';
+      h.style.animationDelay = Math.random()*5+'s';
+      h.style.fontSize = (20+Math.random()*50)+'px';
+      document.body.appendChild(h);
+    }
+  </script>
+</body>
+</html>
